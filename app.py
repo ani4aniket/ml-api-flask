@@ -7,7 +7,7 @@ import pickle
 # load the model from disk
 regressor = pickle.load(open("regressor.model", 'rb'))
 
-sc_X = pickle.load(open("scaler_X.model", 'rb'))
+sc_X = pickle.load(open("scaler_x.model", 'rb'))
 
 sc_y = pickle.load(open("scaler_y.model", 'rb'))
 
