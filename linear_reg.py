@@ -4,7 +4,7 @@ Spyder Editor
 
 This is a temporary script file.
 """
-
+# Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -38,20 +38,21 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 
 # Visualising the Training set results
+fig_handle = plt.figure()
 plt.scatter(X_train, y_train, color = 'red')
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary vs Experience (Training set)')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
-plt.show()
+# plt.show()
 
 # Visualising the Test set results
-plt.scatter(X_test, y_test, color = 'red')
-plt.plot(X_train, regressor.predict(X_train), color = 'blue')
-plt.title('Salary vs Experience (Test set)')
-plt.xlabel('Years of Experience')
-plt.ylabel('Salary')
-plt.show()
+# plt.scatter(X_test, y_test, color = 'red')
+# plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+# plt.title('Salary vs Experience (Test set)')
+# plt.xlabel('Years of Experience')
+# plt.ylabel('Salary')
+# plt.show()
 
 
 
@@ -65,15 +66,16 @@ print(sc_y.inverse_transform(sample_output))
 
 import pickle 
   
-# Save the trained model as a pickle string. 
-filename = 'regressor.model'
-pickle.dump(regressor, open(filename, 'wb')) 
+# # Save the trained model as a pickle string. 
+# filename = 'regressor.model'
+# pickle.dump(regressor, open(filename, 'wb')) 
 
 
-# Save the X scaler as a pickle string. 
-filename = 'scaler_x.model'
-pickle.dump(sc_X, open(filename, 'wb')) 
+# # Save the X scaler as a pickle string. 
+# filename = 'scaler_x.model'
+# pickle.dump(sc_X, open(filename, 'wb')) 
 
-# Save the Y scaler as a pickle string. 
-filename = 'scaler_y.model'
-pickle.dump(sc_y, open(filename, 'wb')) 
+# # Save the Y scaler as a pickle string. 
+# filename = 'scaler_y.model'
+# pickle.dump(sc_y, open(filename, 'wb')) 
+pickle.dump(fig_handle,open('trainGraph.pickle','wb'))
