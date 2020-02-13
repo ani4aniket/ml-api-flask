@@ -1,6 +1,7 @@
 import tkinter as tk
 
 root= tk.Tk()
+root.wm_title("Salary Predictor")
 
 canvas1 = tk.Canvas(root, width = 400, height = 300,  relief = 'raised')
 canvas1.pack()
@@ -48,7 +49,7 @@ from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 
 def restore_from_pickle():
-    root.wm_title("Embedding in Tk")
+    root.wm_title("Train Set Graph")
     fig = Figure(figsize=(5, 4), dpi=100)
     with open('/Users/aniketkumar/Documents/mlwork/trainGraph.pickle', 'rb') as fid:
         fig = pickle.load(fid)
@@ -61,22 +62,22 @@ def restore_from_pickle():
     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
     return
  
-def getGraph ():
-    root.wm_title("Embedding in Tk")
+# def getGraph ():
+#     root.wm_title("Embedding in Tk")
 
     
 
-    fig = Figure(figsize=(5, 4), dpi=100)
-    t = np.arange(0, 3, .01)
-    fig.add_subplot(111).plot(t, 2 * np.sin(2 * np.pi * t))
+#     fig = Figure(figsize=(5, 4), dpi=100)
+#     t = np.arange(0, 3, .01)
+#     fig.add_subplot(111).plot(t, 2 * np.sin(2 * np.pi * t))
 
-    canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
-    canvas.draw()
-    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+#     canvas = FigureCanvasTkAgg(fig, master=root)  # A tk.DrawingArea.
+#     canvas.draw()
+#     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
-    toolbar = NavigationToolbar2Tk(canvas, root)
-    toolbar.update()
-    canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+#     toolbar = NavigationToolbar2Tk(canvas, root)
+#     toolbar.update()
+#     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
 
 def _quit():
