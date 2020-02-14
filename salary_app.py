@@ -17,7 +17,6 @@ canvas1.create_window(200, 100, window=label2)
 entry1 = tk.Entry (root) 
 canvas1.create_window(200, 140, window=entry1)
 
-
 import pickle
 import numpy as np
 # load the model from disk
